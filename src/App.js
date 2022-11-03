@@ -9,6 +9,7 @@ import './style/dark.scss'
 import { useState } from 'react'
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
+import { HashRouter } from "react-router-dom";
 
 function App() {
   const {darkMode} = useContext(DarkModeContext)
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
             <Route exact path="/">
               <Route index element={<Home />} />
@@ -33,7 +34,7 @@ function App() {
               </Route>
             </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
